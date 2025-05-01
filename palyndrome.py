@@ -1,17 +1,18 @@
-def palyndrome(word):
-    if len(word) <= 1:
+# Creazione di un metodo che verifica se una parola è palindroma (file Ricorsivo, slide 17)
+
+def palindromaRicorsivo(parola):
+    if len(parola) <= 1:
         return True
     else:
-        return ((word[0] == word[-1]) and
-                palyndrome(word[1:-1]))
+        return parola[0] == parola[-1] and palindromaRicorsivo(parola[1:-1]) # viene verificato che la prima e l'ultima
+        # lettera siano uguali e viene richiamato il medesimo metodo ricorsivo per controllare le restanti lettere
+        # della parola
 
+def palindromaNonRicorsiva(parola):
+    return parola == parola[::-1]
 
-def palyndrome_banale(word):
-    return word ==word[::-1]
-
-if __name__ == '__main__':
-    print(palyndrome('casa'))
-    print(palyndrome('civic'))
-
-    print(palyndrome_banale('casa'))
-    print(palyndrome_banale('civic'))
+if __name__=="__main__":
+    print(palindromaRicorsivo("casa"))
+    print(palindromaRicorsivo("civic"))
+    print(palindromaNonRicorsiva("casa"))
+    print(palindromaNonRicorsiva("civic"))
