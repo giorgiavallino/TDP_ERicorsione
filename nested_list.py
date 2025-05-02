@@ -1,15 +1,17 @@
-def count_leaf_nodes(input_list):
-    if len(input_list) == 0:
+# Creazione di un metodo che data una lista calcoli quante stringhe essa contiene (file Ricorsione, slide 31-32-33-34-35)
+
+def countLeafNodesRicorsivo(lista):
+    if len(lista) == 0:
         return 0
     else:
         counter = 0
-        for element in input_list:
-            if type(element) == list:
-                counter += count_leaf_nodes(element)
+        for elemento in lista:
+            if type(elemento) == list:
+                counter = counter + countLeafNodesRicorsivo(elemento)
             else:
-                counter += 1
+                counter = counter + 1
         return counter
 
 if  __name__ == '__main__':
     names = ['Adam', ['Bob', ['Chet', 'Cat'], 'Barb', 'Bert'], 'Alex', ['Bea', 'Bill'], 'Ann']
-    print(count_leaf_nodes(names))
+    print(countLeafNodesRicorsivo(names))
