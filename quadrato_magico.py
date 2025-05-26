@@ -18,5 +18,9 @@ def ricorsione(soluzione_parziale, rimanenti, N):
             ricorsione(soluzione_parziale, nuovi_rimanenti, N)
             soluzione_parziale.pop()
 
+# BISOGNA ANCORA AGGIUNGERE I VINCOLI (che possono essere introdotti nel caso terminale o nel caso ricorsivo)!!!
+# Introdurre i vincoli nel caso terminale è più semplice dal punto di vista della scrittura del codice, invece
+# introdurre i vincoli nel caso ricorsivo è più efficiente.
+
 if __name__ == '__main__':
     quadrato_magico(3)
